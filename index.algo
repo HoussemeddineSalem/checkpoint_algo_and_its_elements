@@ -3,7 +3,7 @@
     caract : CHAR;
     sentence : STRING;
     numWords,numChar,numVwl, : INTEGER;
-    vowels : ARRAY_OF CHAR[12] := [a,e,i,o,u,w,A,E,I,O,U,W];
+    
     BEGIN
      REPEAT
         write ("Please enter a caracter");
