@@ -1,0 +1,29 @@
+    ALGORITHM Sentence_check 
+    VAR 
+    caract : CHAR;
+    sentence : STRING;
+    numWords,numChar,numVwl, : INTEGER;
+    vowels : ARRAY_OF CHAR[12] := [a,e,i,o,u,w,A,E,I,O,U,W];
+    BEGIN
+     REPEAT
+        write ("Please enter a caracter");
+        read (caract); 
+
+        IF (caract <> " " and caract <> ".")
+          THEN lengSenetence := lengSenetence +1; // return length of sentence;
+        END IF 
+       
+        IF (caract = "a" or, caract = "e" or, caract = "i" or, caract = "o" or, caract = "u" or,
+          caract = "w" or, caract = "A" or, caract = "E" or, caract = "I" or, caract = "O" or, caract = "U" or, caract = "W")
+          
+          THEN numVwl := numVwl + 1; //return number of Vowels
+         
+        
+               ELSE IF (caract = " " or ".")
+                     then numWords := numWords +1; //calculating number of words
+
+        END IF
+        
+                
+     UNTIL (caract = ".")
+    END
