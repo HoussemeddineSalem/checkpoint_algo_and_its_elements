@@ -1,29 +1,41 @@
     ALGORITHM Sentence_check 
     VAR 
     caract : CHAR;
-    sentence : STRING;
     numWords,numChar,numVwl, : INTEGER;
     
     BEGIN
+    caract := "";
+    numWords := 0;
+    numChar := 0;
+    numVwl := 0;
+
      REPEAT
         write ("Please enter a caracter");
         read (caract); 
 
-        IF (caract <> " " and caract <> ".")
-          THEN lengSenetence := lengSenetence +1; // return length of sentence;
+        IF (caract <> " ")
+          THEN numChar := numChar +1; // return length of sentence;
         END IF 
        
-        IF (caract = "a" or, caract = "e" or, caract = "i" or, caract = "o" or, caract = "u" or,
-          caract = "w" or, caract = "A" or, caract = "E" or, caract = "I" or, caract = "O" or, caract = "U" or, caract = "W")
+        IF (caract = "a" OR caract = "e" OR caract = "i" OR caract = "o" OR caract = "u" OR
+          caract = "w" OR caract = "A" OR caract = "E" OR caract = "I" OR caract = "O" OR caract = "U" OR caract = "W")
           
           THEN numVwl := numVwl + 1; //return number of Vowels
          
         
-               ELSE IF (caract = " " or ".")
-                     then numWords := numWords +1; //calculating number of words
+               ELSE IF (caract = " " OR ".")
+                     then numWords := numWords +1; 
+                     //calculating number of words, whenever it finds a space, it is surely preceeded by a word
+                     //but at the end word, it is followed by a dot 
 
         END IF
         
                 
-     UNTIL (caract = ".")
+     UNTIL (caract = ".");
+
+     Write ("the number of words is ", numWords);
+     Write ("the number of vowels is ", numVwl);
+     Write ("the number of characters is ", numChar);
+
+
     END
